@@ -1,4 +1,13 @@
 #include "stack_linked_list.h"
+#include "recursive_stack_linked_list.h"
+
+#include <iostream>
+using namespace std;
+
+// uncomment below line to use recursive stack
+using namespace stack_linked_list;
+// uncomment below line to use non-recursive stack
+// using namespace recursive_stack_linked_list;
 
 int main() {
 	Stack<int> s;

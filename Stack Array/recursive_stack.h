@@ -1,10 +1,10 @@
-#ifndef STACK_H
-#define STACK_H
+#ifndef RECURSIVE_STACK_H
+#define RECURSIVE_STACK_H
 
 #include <iostream>
 using namespace std;
 
-namespace stack {
+namespace recursive_stack {
 	template <typename T>
 	struct Stack {
 		T* item;
@@ -13,6 +13,8 @@ namespace stack {
 
 		void init(unsigned int stackSize);
 		void copyStack(const Stack<T>& s);
+		void copyStack_recursive_helper(const Stack<T>& s, int i);
+		void copyStack_recursive(const Stack<T>& s);
 		void release();
 
 		bool isEmpty();
@@ -20,9 +22,9 @@ namespace stack {
 		T pop();
 		T topValue();
 		
-		void print();
+		void print_recursive_helper(int i);
+		void print_recursive();
 	};
 }
 
-
-#endif STACK_H
+#endif RECURSIVE_STACK_H

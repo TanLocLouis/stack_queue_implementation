@@ -129,9 +129,11 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="queue.cpp" />
+    <ClCompile Include="recursive_queue.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="queue.h" />
+    <ClInclude Include="recursive_queue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

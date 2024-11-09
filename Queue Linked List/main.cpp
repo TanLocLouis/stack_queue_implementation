@@ -1,4 +1,11 @@
 #include "queue_linked_list.h"
+#include "recursive_queue_linked_list.h"
+
+// uncomment below line to use recursive queue
+using namespace queue_linked_list;
+// uncomment below line to use non-recursive queue
+// using namespace recursive_queue_linked_list;
+
 
 int main() {
 	Queue<int> q;
@@ -17,6 +24,9 @@ int main() {
 		cout << "6. Dequeue khoi Queue" << endl;
 		cout << "7. Lay gia tri dau Queue" << endl;
 		cout << "8. In Queue" << endl;
+		cout << "9. In Queue bang de quy" << endl;
+		cout << "10. Copy Queue bang de quy" << endl;
+		cout << "11. Giai phong Queue bang de quy" << endl;
 
 		cout << "Nhap vao lua chon cua ban: ";
 		cin >> option;
@@ -64,6 +74,19 @@ int main() {
 			}
 			case 8: {
 				q.print();
+				break;
+			}
+			case 9: {
+				q.print_recursive();
+				break;
+			}
+			case 10: {
+				q1.init();
+				q1.copyQueue_recursive(q);
+				break;
+			}
+			case 11: {
+				q.release_recursive();
 				break;
 			}
 			default:

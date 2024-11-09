@@ -1,8 +1,15 @@
 #include "stack.h"
+#include "recursive_stack.h"
 
 #include <iostream>
-
 using namespace std;
+
+// uncomment below line to use recursive stack
+using namespace stack;
+// uncomment below line to use non-recursive stack
+// using namespace recursive_stack;
+
+#include <chrono>
 
 int main() {
 	Stack<int> s;
@@ -38,6 +45,12 @@ int main() {
 			case 2: {
 				s1.init(s.maxSize);
 				s1.copyStack(s);
+				/*
+				auto start = std::chrono::high_resolution_clock::now();
+				auto end = std::chrono::high_resolution_clock::now();
+				auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+				cout << "Thoi gian copy Stack: " << duration.count() << " microseconds" << endl;	
+				*/
 				break;
 			}
 			case 3: {

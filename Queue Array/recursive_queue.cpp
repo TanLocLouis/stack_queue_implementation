@@ -1,9 +1,9 @@
-#include "queue.h"
+#include "recursive_queue.h"
 
 #include <iostream>
 using namespace std;
 
-using namespace queue;
+using namespace recursive_queue;
 
 template class Queue<int>;
 template class Queue<float>;
@@ -111,3 +111,38 @@ void Queue<T>::print() {
 	cout << endl;
 }
 
+template <typename T>
+void Queue<T>::copyQueue_recursive_helper(const Queue<T>& q, int i) {
+	if (i > rear) {
+		return;
+	}
+	
+	items[i] = q.items[i];
+	copyQueue_recursive_helper(q, i + 1);
+}
+
+template <typename T>
+void Queue<T>::copyQueue_recursive(const Queue<T>& q) {
+	items = new T[q.maxSize];
+	front = q.front;
+	rear = q.rear;
+	count = q.count;
+	maxSize = q.maxSize;
+
+	copyQueue_recursive_helper(q, 0);
+}
+
+template <typename T>
+void Queue<T>::print_recursive_helper(int i) {
+	if (i == rear) {
+		return;
+	}
+
+	cout << items[i] << char(32);
+	print_recursive_helper(i + 1);
+}
+
+template <typename T>
+void Queue<T>::print_recursive() {
+	print_recursive_helper(0);
+}

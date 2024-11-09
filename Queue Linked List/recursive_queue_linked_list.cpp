@@ -1,6 +1,7 @@
-#include "queue_linked_list.h"
 
-using namespace queue_linked_list;
+#include "recursive_queue_linked_list.h"
+
+using namespace recursive_queue_linked_list;
 
 template class Queue<int>;
 template class Queue<float>;

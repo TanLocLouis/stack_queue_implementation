@@ -1,9 +1,9 @@
-#include "stack.h"
+#include "recursive_stack.h"
 
 #include <iostream>
 using namespace std;
 
-using namespace stack;
+using namespace recursive_stack;
 
 template class Stack<int>;
 template class Stack<float>;
@@ -71,9 +71,35 @@ void Stack<T>::copyStack(const Stack<T>& s) {
 }
 
 template <typename T>
-void Stack<T>::print() {
-	for (int i = 0; i <= top; i++) {
-		cout << item[i] << char(32);
+void Stack<T>::copyStack_recursive_helper(const Stack<T>& s, int i) {
+	if (i > s.top) {
+		return;
 	}
-	cout << endl;
+
+	item[i] = s.item[i];
+	copyStack_recursive_helper(s, i + 1);
+}
+
+template <typename T>
+void Stack<T>::copyStack_recursive(const Stack<T>& s) {
+	item = new T[maxSize];
+	top = s.top;
+	maxSize = s.maxSize;
+	copyStack_recursive_helper(s, 0);
+}
+
+template <typename T>
+void Stack<T>::print_recursive_helper(int i) {
+	if (i > top) {
+		cout << endl;
+		return;
+	}
+
+	cout << item[i] << char(32);
+	print_recursive_helper(i + 1);
+}
+
+template <typename T>
+void Stack<T>::print_recursive() {
+	print_recursive_helper(0);
 }

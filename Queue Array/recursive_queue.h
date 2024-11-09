@@ -1,7 +1,7 @@
-#ifndef QUEUE_H
-#define QUEUE_H
+#ifndef RECURSIVE_QUEUE_H
+#define RECURSIVE_QUEUE_H
 
-namespace queue {
+namespace recursive_queue {
 	template <typename T>
 	struct Queue {
 		T* items;
@@ -12,6 +12,8 @@ namespace queue {
 
 		void init(unsigned int queueSize);
 		void copyQueue(const Queue<T>& q);
+		void copyQueue_recursive_helper(const Queue<T>& q, int i);
+		void copyQueue_recursive(const Queue<T>& q);
 		void release();
 
 		bool isEmpty();
@@ -20,8 +22,10 @@ namespace queue {
 		T frontValue();
 
 		void print();
+		void print_recursive_helper(int i = 0);
+		void print_recursive();
 	};
 }
 
 
-#endif QUEUE_H
+#endif RECURSIVE_QUEUE_H

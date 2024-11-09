@@ -1,8 +1,14 @@
 #include "queue.h"
+#include "recursive_queue.h"
 
 #include <iostream>
 
 using namespace std;
+
+// uncomment below line to use recursive queue
+using namespace queue;
+// uncomment below line to use non-recursive queue
+// using namespace recursive_queue;
 
 int main() {
 	int option = -1;
@@ -17,6 +23,8 @@ int main() {
 		cout << "6. Dequeue khoi Queue" << endl;
 		cout << "7. Lay gia tri dau Queue" << endl;
 		cout << "8. In Queue" << endl;
+		cout << "9. In Queue bang de quy" << endl;
+		cout << "10. Copy Queue bang de quy" << endl;
 
 		Queue<int> q;
 		Queue<int> q1;
@@ -56,7 +64,6 @@ int main() {
 				break;
 			}
 			case 5: {
-		while (getchar() != '\n');
 				int newItem;
 				cout << "Nhap vao gia tri can enqueue: ";
 				cin >> newItem;
@@ -75,6 +82,16 @@ int main() {
 			}
 			case 8: {
 				q.print();
+				break;
+			}
+			case 9: {
+				q.print_recursive();
+				break;
+			}
+			case 10: {
+				Queue<int> q1;
+				q1.init(q.maxSize);
+				q1.copyQueue_recursive(q);
 				break;
 			}
 			default:

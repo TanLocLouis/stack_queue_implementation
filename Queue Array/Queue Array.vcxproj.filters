@@ -19,11 +19,17 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="queue.cpp">
-      <Filter>Resource Files</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="recursive_queue.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="queue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="recursive_queue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

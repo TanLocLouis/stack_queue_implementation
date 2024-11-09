@@ -19,11 +19,17 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="stack.cpp">
-      <Filter>Resource Files</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="recursive_stack.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="recursive_stack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
